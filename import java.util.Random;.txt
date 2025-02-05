@@ -1,0 +1,52 @@
+import java.util.Random;
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+       
+       //spawns in the random number and initializes guess as well as set the attempt counter 
+        Random random = new Random();
+        int guess = 0;
+        int rng = random.nextInt(10) + 1;
+        Scanner scnr = new Scanner(System.in);
+        int attempts = 0;
+        int maxAttempts = 5;
+        
+        //loops until the user guesses the number correctly
+       while (guess != rng && attempts < maxAttempts) {
+       
+       System.out.println("Enter your guess from 1-10");  
+       
+       if (scnr.hasNextInt()) {
+           guess = scnr.nextInt();
+           attempts++;
+       //loops until user wins or loses
+       
+           if (guess <1 || guess >10) {
+               System.out.println("enter a valid number from 1-10 \n");
+           } else if (guess > rng) {
+               System.out.print("Too high, " + (maxAttempts - attempts) + " attempts left \n");
+           } else if (guess < rng) {
+               System.out.println("Too low, " + (maxAttempts - attempts) + " attempts left \n");
+           } else {
+               System.out.println("You guessed the right number! \n");
+           }
+       }
+           else {
+               System.out.println("invalid input \n");
+               scnr.next();
+           }
+           
+           //triggers when user runs out of attempts
+           if ((maxAttempts - attempts) == 0) {
+               System.out.println("The number was " + rng +". You have ran out of attempts, you lose!");
+           }
+        
+       }
+       
+        scnr.close(); 
+           
+       } 
+      
+
+    }
