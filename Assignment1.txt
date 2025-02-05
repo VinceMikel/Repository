@@ -29,7 +29,7 @@ class Main {
            } else if (guess < rng) {
                System.out.println("Too low, " + (maxAttempts - attempts) + " attempts left \n");
            } else {
-               System.out.println("You guessed the right number! \n");
+               System.out.println("Congratulations! You've guessed the correct number. \n");
            }
        }
            else {
