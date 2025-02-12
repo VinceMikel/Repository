@@ -23,7 +23,7 @@ import java.util.ArrayList;
 		    public ArrayList transactions;
 
 		    public Bank() {
-		        this.amount = 0.0;
+		        this.amount = 0;
 		        this.transactions = new ArrayList();
 
 		    }
