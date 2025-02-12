@@ -14,4 +14,47 @@
 
  
 
-4.) 
+4.) package CSC2;
+import java.util.ArrayList;
+
+		public class Bank {
+			
+		    public double amount;
+		    public ArrayList transactions;
+
+		    public Bank() {
+		        this.amount = 0.0;
+		        this.transactions = new ArrayList();
+
+		    }
+
+		    public void deposit(double value) {
+		        if (value > 0) {
+		            amount = amount + value;
+		            transactions.add(value);
+		        } else {
+		            System.out.println("deposit amount must be positive.");
+		        }
+		    }
+
+		    public void withdraw(double value) {
+		        if (value > 0 && value <= amount) {
+		            amount = amount - value;
+		        } else {
+		            System.out.println("Invalid withdrawal amount.");
+		        }
+		    }
+
+		    public void listInteractions() {
+		        for (int i = 0; i < transactions.size(); i++) {
+		            double transaction = (double) transactions.get(i);
+		            System.out.println(transaction);
+		        }
+		    }
+
+		    public double getBalance() {
+		        return amount;
+		    }
+		     amou
+		    
+		}
