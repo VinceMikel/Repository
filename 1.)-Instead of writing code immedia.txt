@@ -1,0 +1,17 @@
+1.)-Instead of writing code immediately after hatching an idea, it is better to plan and not do any coding. Instead, we should use a UML system to articulate ideas and make collaborations seamlessly easy with others. 
+
+-When starting out in learning to code, it is best to consider getting into the “object oriented” mindset to get the most out of your learning as efficiently as possible. 
+
+-Although it is not a formal way, object orienting is one of the best ways to start out projects because it introduces techniques on how to proceed with your ideas into bite-sized, step-by-step instructions to help you see the bigger picture.  
+
+ 
+
+2.) When it comes to writing a code that takes a lot of processing, optimization should be in mind to make sure it runs well and lessen the chances of bugs. Using an array is one of the memory efficient ways to store the same type of data into a group for easy access and processing. 
+
+ 
+
+3.) Creating objects and classes are a fundamental way to developing your program. It provides a simpler structure, maintainability and overall better optimization. When you do so, you can put them to interact with one another, saving you time and giving you better and more uses with it. With the classes you can inherit functionality while maintaining efficiency. 
+
+ 
+
+4.) 
