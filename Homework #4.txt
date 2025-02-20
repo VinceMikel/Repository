@@ -10,6 +10,38 @@ Homework #4
 
 
 
-4.) 
+4.) public class Shape {
+    
+    String name;
+    int vertices;
+    int edges;
+    int numSides;
+    
+    
+    public Shape(int numSides) {
+        this.numSides = numSides;
+    }
+    
+    public void setNumSides(int numSides) {
+        this.numSides = numSides;
+    }
+    
+    
+    public int getNumSides() {
+        return numSides;
+    }
+    
+    
+   // I could not use circle and rectangle class from previous HW because the previous homework course was not present in Lynda
+   
+   
+   
+   public static void main(String[] args) {
+       
+       Shape square = new Shape(10);
+       
+       System.out.println("Number of sides of shape: " + square.getNumSides());
+   }
+}
 
 
