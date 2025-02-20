@@ -1,2 +1,15 @@
 Homework #4
 
+1.) In section 1, She explained that when we create objects, a blueprint (class) would contain the attributes of the object we created, like size, color, or the different aspects of the object that helps it function. All of those different attributes is what makes it a blueprint. We were able to differentiate between classes and instance members. Section 2 Went through what encapsulation is, showing examples of using access modifiers. We learned to build the employee class and the different types of access modifiers like private, protected, public, and no modifier. Section 3 covers all about inheritance for benefits like optimization; reducing code duplication. We would have the subclass and superclass. 
+
+
+2.) In the example showed we had employee and salesperson. Employee would have a name, id, salary and the salesperson would have employee + commission. this would mean that the employee is the superclass and the salesperson the subclass because salesperson is inheriting attributes from the employee.
+
+
+3.) Inheritance helps to reduce code duplication as well as provide code reusability and maintainability. In section 3, between the employee and analyst it is similar to the employee-salesperson relation. The similarity is that the Employee is still being used as the superclass, difference between salesperson and analyst is their commission/bonus. Both analyst and salesperson are employees, but analyst can never be a salesperson and vice versa.
+
+
+
+4.) 
+
+
