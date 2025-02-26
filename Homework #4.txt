@@ -38,7 +38,7 @@ Section 3 covers all about inheritance for benefits like optimization; reducing 
    // I could not use circle and rectangle class from previous HW because the previous homework course was not present in Lynda
 
 
-//edit: 2/25/2025
+//edit: 2/25/2025 made my own instead
     
 //on the subclass 
     class Rectangle extends Shape {
