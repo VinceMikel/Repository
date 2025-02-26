@@ -20,7 +20,7 @@ Section 3 covers all about inheritance for benefits like optimization; reducing 
     int edges;
     int numSides;
     
-    
+    //setter and getter methods
     public Shape(int numSides) {
         this.numSides = numSides;
     }
@@ -39,16 +39,31 @@ Section 3 covers all about inheritance for benefits like optimization; reducing 
 
 
 //edit: 2/25/2025
+    
+//on the subclass 
+    class Rectangle extends Shape {
+public Rectangle() {
+    super(4);
+}
+
+}
+public class Circle extends Shape {
+public Circle() {
+super(0);
+}
+
+}
+   
 
 
-   
-   
+
+//on the main class
    
    public static void main(String[] args) {
        
-       Shape square = new Shape(4);
+       Shape rectangle = new Shape(4);
        
-       System.out.println("Number of sides of shape: " + square.getNumSides());
+       System.out.println("Number of sides of shape: " + rectangle.getNumSides());
    }
 }
 
