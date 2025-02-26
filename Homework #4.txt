@@ -54,7 +54,7 @@ super(0);
 
 }
    
-
+}
 
 
 //on the main class
@@ -64,7 +64,12 @@ super(0);
        Shape rectangle = new Shape(4);
        
        System.out.println("Number of sides of shape: " + rectangle.getNumSides());
+
+
+     Shape circle = new Shape(0);
+
+    System.out.println("Number of sides of shape: " + circle.getNumSides());
    }
-}
+
 
 
