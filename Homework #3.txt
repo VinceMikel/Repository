@@ -1,19 +1,79 @@
 Homework #3
 
-1.) Could not find the course
+1.) What is encapsulation?
+Encapsulation is the restricting and unrestricting of the components of the attributes or objects by using access modifiers especially public vs private setter and getter methods. With it you can have better security if anyone tries to have unauthorized access 
 
 
 
-2.) 
+2.) What is a null reference and what is the problem with it?
+Null reference just means something that was created has no value for now. This will create problems that can get worse in the future if not taken care of because of runtime crashes
+
+
+3.) What is the difference between inheritance and composition?
+inhertiance and composition is what provides more reusablitiy to the code as well as more flexibility and functionality. The difference between the two is the relationship. inheritance is described as "is-a" relationship while composition described as "has-a" relationship. 
+
+
+4.) 
+
+public class Car {
+
+    private String model;
+    private int year;
+    private int distance;
+    private int totalDistance;
+
+    public  Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void honk() {
+    System.out.println("The " + year + " "  + model + " is honking");
+    }
+
+
+    public void accelerate(int distance) {
+        totalDistance += distance;
+
+    }
+
+
+    public void reverse(int distance) {
+        totalDistance -= distance;
+
+    }
+
+
+    public void stop() {
+        System.out.println("Car is stopping");
+    }
 
 
 
-3.)
+    public void print() {
+        System.out.println("Car model: " +  model);
+        System.out.println("Car year: " + year);
+    }
 
 
-
-4.)
-
-
-
-5.)
+}
