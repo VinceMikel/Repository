@@ -77,3 +77,59 @@ public class Car {
 
 
 }
+
+
+public class SportsCar extends Car{
+
+
+    public SportsCar(String model, int year) {
+        super(model, year);
+    }
+
+}
+
+public class JunkCar extends Car {
+
+
+    public JunkCar(String model, int year) {
+        super(model, year);
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        JunkCar junkCar = new JunkCar("Junk Car", 1985);
+        SportsCar SportsCar = new SportsCar("Sports Car", 2024);
+
+        junkCar.print();
+        SportsCar.print();
+
+
+        junkCar.accelerate(100);
+        SportsCar.accelerate(200);
+
+        junkCar.honk();
+        SportsCar.honk();
+
+        junkCar.reverse(50);
+        SportsCar.reverse(50);
+
+
+        SportsCar.stop();
+        junkCar.stop();
+
+
+        junkCar.printTotalDistance();
+        SportsCar.printTotalDistance();
+
+
+
+    }
+}
+
+
+
+
