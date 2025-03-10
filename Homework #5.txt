@@ -1,0 +1,219 @@
+Homework #5
+
+-there are different types of testing 
+
+- Unit testing, System testing, Integration testing, acceptance testing, performance testing, regression testing, security testing, load testing, end-to-end testing. 
+
+TDD – Test-driven development 
+
+Is when you write a test before writing the implementation code. This is a good approach to make developers think about requirements before the actual implementation. 
+
+TDD is better to fail on because if it succeeds, there is something wrong with your code 
+
+There are annotations you can use when testing. In one of the videos, we used @Test and @beforeEach. They used an example of a divide method and set up the x (100) and y (10) values and set the expectancy to 10 and it showed as all tests passed. But when setting expectations to 11 flagged it as a failure  
+
+
+
+
+
+****The Practical Test-Driven Development for Java Programmers by Matt Greencroft was not present on Lynda, I tried searching for the author yet I couldnt find it except for one profile with no published work****
+
+
+package Homework;
+import java.util.Scanner;
+
+public class Homework5 {
+double x;
+double y;
+
+
+
+public void divideBy(double num1, double num2) {
+	this.x = num1;
+	this.y = num2;
+}
+
+public double getNum() {
+	if(y == 0) {
+		System.out.println("Number cannot be divided by zero");
+	}
+	
+	double num = x / y;
+	return num ;
+}
+
+
+}
+
+package Homework;
+
+import java.util.Scanner;
+
+public class Main extends Homework5 {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		Homework5 hw = new Homework5();
+		
+		
+		System.out.println("Enter the first number");
+		
+		double num1 = scanner.nextInt();
+		
+		
+		System.out.println("Enter the second number");
+		
+		double num2 = scanner.nextInt();
+		
+		
+		if (num2 == 0) {
+            System.out.println("Cannot divide by zero!");
+        } else {
+            hw.divideBy(num1, num2);         
+            double result = hw.getNum();     
+            System.out.println("Result: " + result);  
+        }
+		
+		
+		
+		scanner.close();
+
+	}
+
+
+}
+
+
+
+package Homework;
+
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+class Testing {
+
+	@Test
+	void test() {
+		
+	}
+	
+	
+	
+	 public void testDivideBy() {
+	        Homework5 hw = new Homework5();
+	        hw.divideBy(10, 5); 
+	        double result = hw.getNum();
+	        assertEquals(2.0, result, 0.00001);  
+	    }
+	 
+
+}
+
+
+
+
+
+package CSC2;
+
+public class Shirt {
+
+	private String color;
+	private int size;
+	
+	public Shirt(String color, int size) {
+		this.color = color;
+		this.size = size;
+	}
+	
+	
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
+	
+	public String getColor() {
+		return color;
+	}
+	
+	
+	public void setSize(int size) {
+		this.size = size;
+	}
+	
+	public int getSize() {	
+		return size;
+	}
+	
+	
+	public void display() {
+		
+		System.out.println("Shirt color: " + color);
+		System.out.println("Shirt size: " + size);
+	}
+	
+	
+
+}
+
+
+package CSC2;
+
+public class TShirt extends Shirt {  
+    public TShirt(String color, int size) {
+        super(color, size);  
+    }
+}
+
+
+
+package CSC2;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Shirt Navi = new Shirt("Blue", 0);
+		
+		
+		Navi.setColor("Yellow");
+		Navi.setSize(3);
+		Navi.display();
+
+	}
+
+}
+
+package CSC2;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+
+class shirtTest {
+	
+	private Shirt shirt;
+
+	@Test
+	void test() {
+		
+	}
+	
+	public void testSetColor() {
+        shirt.setColor("Blue");
+        assertEquals("Yellow", shirt.getColor());
+    }
+
+   
+    @Test
+    public void testSetSize() {
+        shirt.setSize(4);
+        assertEquals(8, shirt.getSize());
+    }
+	
+
+}
+
+
+
+
