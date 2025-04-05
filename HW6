@@ -1,0 +1,84 @@
+package CSC;
+import java.awt.*;
+import java.awt.event.*;
+
+public class HW6 extends Frame implements ActionListener {
+	
+	Label nameLabel, idLabel, deptLabel, outputLabel;
+    TextField nameField, idField, deptField;
+    Button submitButton;
+    
+	public HW6() {
+        setTitle("Employee Information Form");
+        setSize(500, 400);
+        setLayout(null);
+        setVisible(true);
+
+        nameLabel = new Label("name:");
+        nameLabel.setBounds(50, 50, 100, 30);
+        add(nameLabel);
+
+        nameField = new TextField();
+        nameField.setBounds(150, 50, 150, 30);
+        add(nameField);
+
+        idLabel = new Label("employee ID:");
+        idLabel.setBounds(50, 90, 100, 30);
+        add(idLabel);
+
+        idField = new TextField();
+        idField.setBounds(150, 90, 150, 30);
+        add(idField);
+
+        deptLabel = new Label("department:");
+        deptLabel.setBounds(50, 130, 100, 30);
+        add(deptLabel);
+
+        deptField = new TextField();
+        deptField.setBounds(150, 130, 150, 30);
+        add(deptField);
+
+        submitButton = new Button("submit");
+        submitButton.setBounds(150, 180, 80, 30);
+        submitButton.addActionListener(this);
+        add(submitButton);
+
+        outputLabel = new Label();
+        outputLabel.setBounds(50, 230, 300, 30);
+        add(outputLabel);
+
+        addWindowListener(new WindowAdapter() {  
+            public void windowClosing(WindowEvent e) {  
+      	    System.exit(0);
+          }
+      });
+    }
+
+    public void actionPerformed(ActionEvent e) {
+		String name = nameField.getText();
+        String id = idField.getText();
+        String dept = deptField.getText();
+		outputLabel.setText("Employee: " + name + " | ID: " + id + " | Dept: " + dept);
+    }
+
+    public static void main(String[] args) {
+        new HW6();
+    }
+}
+
+
+/* 1. What does it mean that Java AWT is platform dependent?
+AWT varies on hosts system's GUI and is not consistent on every platform 
+
+2. What does it mean that Java runs on a virtual machine? How is that beneficial?
+It allows it to run on any device as long as its got a compatible JVM
+
+3. In every hierarchy map of Java, Object is always at the top. What is this so? 
+because it is the most basic, meaning classes inherit from the object
+
+4. What is a Java package?
+It is used as an organizer that keeps classes under its belt and provide access and also controls it
+
+5. What is an event in Java?
+it represents an action like clicking a button or even just moving the mouse or typing on the keyboard to be picked up by the actionlistener
+*/
