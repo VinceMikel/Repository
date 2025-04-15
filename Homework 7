@@ -1,0 +1,132 @@
+package CSC;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+
+public class Module7 extends JFrame {
+	private JTextField name;
+	private JTextField email;
+	private JTextField password;
+	private JTextField confirmPassword;
+    private JButton submitButton;
+    private JButton clear;
+    
+	public Module7() {
+		
+		setTitle("Homework 7");
+		setSize(500,400);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(new GridLayout(6, 2, 10, 10));
+		
+		//for labels
+		
+		add(new JLabel("Name: "));
+		name = new JTextField();
+		add(name);
+		
+		
+		add(new JLabel("Email: "));
+		email = new JTextField();
+		add(email);
+		
+		add(new JLabel("Password: "));
+		password = new JTextField();
+		add(password);
+		
+		add(new JLabel("Confirm Password: "));
+		confirmPassword = new JTextField();
+		add(confirmPassword);
+		
+		
+		
+		/*name = new JTextField();
+		add(name);
+		
+		email = new JTextField();
+		add(email);
+		
+		password = new JTextField();
+		add(password);
+		
+		confirmPassword = new JTextField();
+		add(password);
+		
+		*/
+		//buttons
+		
+		submitButton = new JButton("Submit");
+		clear = new JButton("Clear");
+		
+		
+		add(submitButton);
+		add(clear);
+		
+		//action listeners
+		
+		submitButton.addActionListener(new SubmitButton());
+		clear.addActionListener(new ClearButton());
+		
+	}
+	
+	
+	private class SubmitButton implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			String inputName = name.getText();
+			String inputEmail = email.getText();
+			String inputPassword = password.getText();
+			String inputConfirmPassword = confirmPassword.getText();
+			
+			if(inputName.isEmpty() || inputEmail.isEmpty() || inputPassword.isEmpty() || inputConfirmPassword.isEmpty()) {
+				JOptionPane.showMessageDialog(null, "All fields must be filled");
+				return;
+			}
+			
+			if(!inputPassword.equals(inputConfirmPassword)) {
+				JOptionPane.showMessageDialog(null, "Passwords do not match");
+				return;
+			}
+			
+			
+			String message = "Name: " + inputName + "\nEmail: " + inputEmail + "\nPassword: " + inputPassword;
+			JOptionPane.showMessageDialog(Module7.this, message, "Register info", JOptionPane.INFORMATION_MESSAGE);
+		}
+		
+	}
+	
+	
+	private class ClearButton implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			name.setText(" ");
+			email.setText(" ");
+			password.setText(" ");
+			confirmPassword.setText(" ");
+		
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		SwingUtilities.invokeLater(() -> {
+		    Module7 form = new Module7();
+		    form.setVisible(true);
+		});
+	
+	
+		
+		
+		
+		
+	}
+}
