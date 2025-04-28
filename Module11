@@ -1,0 +1,41 @@
+- it is important that we understand lambdas and streams and take it as second nature because of how commonly used it is. It is different than
+what were used to but to be able to learn the fundementals of this would help us code more powerful programs. Lambdas and streams have made it much 
+easier to use a really powerful style of programming in Java called functional programming. while OOP makes us focus on objects like Car in the video example
+FP or functional style helps us focus on the function that will produce the same output for the same input. Lambdas also help us reduce the amount of characters
+in a program and helpe make clean and small functions easily and streams allow us to process lists of data. 
+
+functional interfaces should have exactly one abstract method and it is recommended we use @FunctionalInterface annotations 
+to ensure there would be no extra methods that get added. "Most of the time, you actually won't need to write your own functional interfaces". 
+In the java documents from Oracle themselves most lambda expressions you would write is most likely to be covered in the documents. In our case 
+the video used the operation IntBinaryOperation.
+
+in the examples used we created streams. we got it from an array and arraylist and we had .sorted() that sorts the elements and .forEach() that should take 
+the elements and processes them. We needdedd a terminal operation like .forEach() in order to trigger the work. our forEach methdod is a functional interface
+so it can be easily converted into a lambda expression like item -> System.out.println(item)
+
+  
+Quizzes and answers
+What is true about functions in functional programming?
+
+  The output is always the same, as long as the input doesn't change.
+
+What is the correct syntax for a lambda that prints "Hello World" to the console?
+
+    () -> System.out.println("Hello world");
+
+What effect does adding the @FunctionalInterface annotation to a class have?
+
+    This annotation means the compiler will generate an error if the conditions of a functional interface 
+    are not met—including that it must contain a single abstract method.
+
+What is the main reason for using the functional interfaces defined in the java.util.function package?
+
+    They satisfy most developers' needs for creating lambdas.
+
+Which option is a valid stream operation?
+
+    This is a valid operation. `forEach` is a terminal method so it has to go at the end of the method chain.
+
+
+
+
