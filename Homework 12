@@ -20,8 +20,20 @@ public class FibonacciDemo {
         return b;
     }
 
+}
 
-public static String decToBin(int n) {
+
+public class DecimalToBinary {
+
+public static void decToBinRecursive(int n) {
+        if (n == 0) {
+
+        return;
+        decToBinRecursive(n / 2);
+        System.out.print(n % 2);
+    }
+
+public static String decToBinIterative(int n) {
         if (n == 0) return "0";
         StringBuilder binary = new StringBuilder();
         while (n > 0) {
@@ -30,3 +42,5 @@ public static String decToBin(int n) {
         }
         return binary.toString();
     }
+
+}
