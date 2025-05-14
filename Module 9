@@ -1,0 +1,87 @@
+package CSC2;
+
+public class Shirt {
+    private String color;
+    private int size;
+
+    public Shirt(String color, int size) {
+        this.color = color;
+        this.size = size;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void display() {
+        System.out.println("Shirt color: " + color);
+        System.out.println("Shirt size: " + size);
+    }
+}
+
+
+
+package CSC2;
+
+public class TShirt extends Shirt {
+    private String sleeveType;
+
+    public TShirt(String color, int size, String sleeveType) {
+        super(color, size);
+        this.sleeveType = sleeveType;
+    }
+
+    public String getSleeveType() {
+        return sleeveType;
+    }
+
+    public void setSleeveType(String sleeveType) {
+        this.sleeveType = sleeveType;
+    }
+
+    @Override
+    public void display() {
+        System.out.println("This is a T-Shirt:");
+        super.display();
+        System.out.println("Sleeve type: " + sleeveType);
+    }
+}
+
+
+package CSC2;
+
+public class Closet {
+    private Shirt shirt;
+
+    public Closet(Shirt shirt) {
+        this.shirt = shirt;
+    }
+
+    public void openCloset() {
+        shirt.display();
+    }
+}
+
+package CSC2;
+
+public class Main {
+    public static void main(String[] args) {
+        Shirt NaVi = new TShirt("Yellow", 4, "Short");
+        Closet myCloset = new Closet(myShirt);
+        myCloset.openCloset();
+    }
+}
+
+
