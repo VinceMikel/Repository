@@ -1,1 +1,57 @@
+package abs;
 
+interface Car {
+	
+	public abstract void color();
+	public abstract void maxSpeed();
+	public abstract void year();
+	
+}
+	 class MakeCar implements Car {
+		private int year;
+		private String color;
+		private int speed;
+		
+	 
+		
+	@Override
+	public void color() {
+		System.out.println("This car's color is: " + color);  
+	  }
+
+
+	@Override
+	public void maxSpeed() {
+		System.out.println("This car's max speed is: " + speed);		
+	}
+
+
+	@Override
+	public void year() {
+		System.out.println("This car's year is: " + year);
+		
+	}
+	
+	public MakeCar(int year, String color, int speed) {
+		this.year = year;
+		this.color = color;
+		this.speed = speed;
+	}
+	
+	 
+	 }
+
+
+
+package abs;
+
+public class Main {
+	 public static void main(String args[]) {
+		 
+	 MakeCar myCar = new MakeCar(1993, "Yellow", 189);
+	 myCar.color();
+	 
+	 }
+	 
+		
+	 }
