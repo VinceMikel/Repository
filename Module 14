@@ -1,0 +1,11 @@
+What is a Generic
+A generic is a feature that lets classes and methods to function without specifying data types. you can create classes, methods, and interfaces that would
+take the type parameter and let you reuse code for different data types without having to retype any of them if it should take in different data types
+
+
+In which situation/set-up is recursion best avoided?
+When the problem would lead to infinite recursive calls that causes a stack overflow. its also not optimal if an iterative approact is simpler and fastere
+
+
+When would we prefer throwable over try/catch?
+Since throwable is the superclass of all exceptions, it can be useful for logging every possible failures and dealing with critical errors
