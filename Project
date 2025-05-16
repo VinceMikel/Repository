@@ -169,6 +169,7 @@ public class Main {
 
 
   Customer customer = new Customer("Me");
+  List<Product> cart = new ArrayList<>();	
 		
 		  Order order = new Order(customer, cart);
 	        order.displayOrder();
