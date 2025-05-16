@@ -1,0 +1,204 @@
+package Module15;
+
+public class Product {
+	private String name;
+	private String type;
+	private double price;
+	
+	//No matter what product it is, it will always contain these 3 elements and so i should make this into a
+	//super class since the category can vary but will inherit these same attributes
+	public Product (String name, String type, double price) {
+		this.name = name;
+		this.type = type;
+		this.price = price;
+			
+	}
+	
+	//Setter Methods
+	
+	public void setName() {
+		this.name = name;
+	}
+	
+	public void setType() {
+		this.type = type;
+	}
+	
+	public void setPrice() {
+		this.price = price;
+	}
+	
+	
+	//Getter methods
+	public String getName() {
+		return name;
+	}
+	
+	public String getType() {
+		return type;
+	}
+	
+	public double getPrice() {
+		return price;
+	}
+	
+	
+	//We need something to display the product's attributes, so Im going to override the default toString method
+	@Override
+	public String toString() {
+		return "Category: " + type + "\n  Product Name: " + name + "\n Price: $" + price;  
+	}
+	
+	
+	
+}
+
+package Module15;
+
+public class Electronics extends Product {
+
+	public Electronics(String name, String type, double price) {
+		super(name, type, price);
+	}
+}
+
+
+public class Clothing extends Product {
+	
+	public Clothing(String name, String type, double price) {
+		super(name, type, price);
+	}
+}
+
+
+public class Grocery extends Product {
+	
+	public Grocery(String name, String type, double price) {
+		super(name, type, price);
+	}
+}
+
+
+package Module15;
+
+public abstract class User {
+	private String name;
+	
+	
+	public User(String name) {
+		this.name = name;
+	}
+
+	
+ public class Admin extends User {
+	public Admin(String name) {
+			super(name);
+		
+	}
+	}
+	
+	
+}
+
+
+package Module15;
+import java.beans.Customizer;
+import java.util.List;
+
+public class Order {
+	private Customer customer;
+	private List<Product> orders;
+	private double fee;
+	
+	
+	//mental notee, customer isnt working for now but fix later
+	public Order {
+		this.customer = customer;
+		this.orders = orders;
+	}
+	
+	
+	/*
+	public double getTotal() {
+		return orders.getPrice().parseInt();
+	}
+	
+	*/
+	
+	//Get total price
+	public double getTotal() {
+        return orders.stream().mapToDouble(Product::getPrice).sum();
+        
+    }
+	
+	
+	//display the customer's order
+	public void displayOrder() {
+		System.out.println("Customer: " + customer.getName());
+		System.out.println(((Order) orders).getTotal());
+	}
+	
+	//calculate tax
+	public double calculateTax() {
+        return getTotal() * 0.08875; //ny tax, add system that change tax rates depending on region if we have time
+    }
+	
+	
+	//calculate shipping
+	public double calculateShipping() {
+        return getTotal() * 0.05; // adding a 5% fee, change to different desirable numbers if we have time 
+    }
+	
+	
+	
+	}
+
+
+package Module15;
+
+public class Main {
+
+	public static void main(String[] args) {
+		List<Product> inventory = orders.of(
+				//add category and apply name and price
+        //for example
+        // new Clothing("Fancy Pants", 59.99),
+				
+				
+				);
+
+
+  Customer customer = new Customer("Me");
+		
+		  Order order = new Order(customer, cart);
+	        order.displayOrder();
+		
+	        System.out.println("\n Filter Electronics under $600:");
+	        inventory.stream()
+	                .filter(p -> p.getCategory().equals("Electronics") && p.getPrice() < 600)
+	                .forEach(System.out::println);
+	        
+	        
+	        System.out.println("\n Filter Clothing under $100:");
+	        inventory.stream()
+	                .filter(p -> p.getCategory().equals("Clothing") && p.getPrice() < 100)
+	                .forEach(System.out::println);
+	        
+	        System.out.println("\n Filter Groceries under $200:");
+	        inventory.stream()
+	                .filter(p -> p.getCategory().equals("Groceries") && p.getPrice() < 200)
+	                .forEach(System.out::println);
+	        
+	        
+	        double total = orders.stream().mapToDouble(Product::getPrice).sum();
+	        System.out.println("Total: $" + total);
+	    	
+	        
+	}
+
+}
+
+
+
+
+
